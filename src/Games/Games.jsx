@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import OneGame from "./OneGame.jsx"
+
 
 
 function Games(){
@@ -37,7 +39,13 @@ function Games(){
 
     return (
       <div className="container mx-auto p-4">
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {games.map((oneGame) => (
+                  <OneGame key={oneGame.id} oneGame={oneGame}/>
+              )
 
+          )}
+          </ul>
       </div>
     );
 
