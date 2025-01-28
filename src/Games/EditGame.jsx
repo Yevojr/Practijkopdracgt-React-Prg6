@@ -132,7 +132,7 @@ function EditGame() {
                 />
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-green-600 hover:text-white transition">
-                Add to Game List
+                Update Game
             </button>
 
         </form>

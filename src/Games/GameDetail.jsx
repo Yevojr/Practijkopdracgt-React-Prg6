@@ -37,14 +37,19 @@ function GameDetail() {
         return <div>Loading game data...</div>
     }
 
+    const createdAt = new Date(game.createdAt).toLocaleString();
+    const updatedAt = new Date(game.updatedAt).toLocaleString();
+
     return (
         <article className="container mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-4">{game.title}</h1>
-            <h3 className="text-gray-700 mb-4 font-semibold">Genre: {game.genre}</h3>
-            <h3 className="text-gray-700 mb-4 font-semibold">Release date: {game.releaseDate}</h3>
-            <p className="text-gray-700 mb-4 ">{game.description}</p>
-            <h4 className="text-gray-700 mb-4">Rating: {game.rating}</h4>
-            <button className="bg-blue-600 text-black font-semibold px-4 py-2 rounded">
+            <h1 className="text-5xl font-bold mb-4 underline">{game.title}</h1>
+            <h3 className="text-black mb-4 font-bold text-2xl">Genre: {game.genre}</h3>
+            <h3 className="text-black mb-4 font-bold text-2xl">Release date: {game.releaseDate}</h3>
+            <p className="text-black mb-4 text-lg font-semibold">{game.description}</p>
+            <h4 className="text-black mb-4 text-lg font-semibold">Rating: {game.rating}</h4>
+            <p className="ttext-black mb-4 text-lg font-semibold">Created at: {createdAt}</p>
+            <p className="text-black mb-4 text-lg font-semibold">Last updated at: {updatedAt}</p>
+            <button className="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-green-500 hover:text-black transition">
                 <Link to="/games">
                     Back to Games list
                 </Link>

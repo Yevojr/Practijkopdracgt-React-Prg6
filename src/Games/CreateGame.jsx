@@ -58,7 +58,7 @@ function CreateGame({handleGameAddition}) {
     };
 
     return(
-        <form onSubmit={handleSubmit} className="border border-blue-400 rounded-lg p-4 bg-gray-100 shadow-lg">
+        <form onSubmit={handleSubmit} className="border border-blue-400 rounded-lg p-4 bg-gray-200 shadow-lg">
             <h2 className="text-lg font-bold mb-4">Add a new game to the list!</h2>
             <div className="mb-4">
                 <label htmlFor="title" className="block font-medium mb-1">Title</label>

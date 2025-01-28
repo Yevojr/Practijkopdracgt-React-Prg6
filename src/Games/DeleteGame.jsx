@@ -28,7 +28,7 @@ function DeleteGame() {
         <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold mb-4"> Delete Game?</h1>
             <p className="mb-6">Are you sure you want to remove this game from the list?</p>
-            <div className="flex gap 4">
+            <div className="flex gap-4 flex-wrap">
                 <button
                 onClick={handleDelete}
                 className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-800 hover:text-white transition"
