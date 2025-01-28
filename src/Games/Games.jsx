@@ -21,7 +21,7 @@ function Games(){
 
                 const data = await response.json();
                 console.log(data);
-                setGames(data);
+                setGames(data.items);
 
             } catch (e) {
                 console.error(e);
@@ -42,9 +42,7 @@ function Games(){
           <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {games.map((oneGame) => (
                   <OneGame key={oneGame.id} oneGame={oneGame}/>
-              )
-
-          )}
+              ))}
           </ul>
       </div>
     );

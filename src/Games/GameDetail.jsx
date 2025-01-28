@@ -10,7 +10,7 @@ function GameDetail() {
         async function fetchGame() {
             try
             {
-                const response = await fetch(`https://145.24.223.173:8001/games/${id}`, {
+                const response = await fetch(`http://145.24.223.173:8001/games/${id}`, {
                     method: "GET",
                     headers: {
                         'Accept': "application/json",
@@ -44,9 +44,11 @@ function GameDetail() {
             <h3 className="text-gray-700 mb-4 font-semibold">Release date: {game.releaseDate}</h3>
             <p className="text-gray-700 mb-4 ">{game.description}</p>
             <h4 className="text-gray-700 mb-4">Rating: {game.rating}</h4>
-            <Link to="/games" className="">
-                Back to Games list
-            </Link>
+            <button className="bg-blue-600 text-black font-semibold px-4 py-2 rounded">
+                <Link to="/games">
+                    Back to Games list
+                </Link>
+            </button>
         </article>
     );
 }
