@@ -26,6 +26,7 @@ function GameDetail() {
 
             } catch (e) {
                 console.error(' Error fetching game:', e);
+                alert("404, Game not found.")
             }
         }
 

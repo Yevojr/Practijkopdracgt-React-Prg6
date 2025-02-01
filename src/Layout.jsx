@@ -14,10 +14,13 @@ function Layout () {
                 <Link to={"/games/create"} className="px-4 text-xl font-semibold underline">Add Game</Link>
             </nav>
 
-
-            <main className="bg-purple-300 h-screen">
+            <body className="bg-purple-300 min-h-screen">
+            <main >
                 <Outlet/>
             </main>
+
+            </body>
+
 
 
         </>
