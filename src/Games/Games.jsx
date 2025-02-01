@@ -6,8 +6,8 @@ import OneGame from "./OneGame.jsx"
 function Games(){
 
     const [games, setGames] = useState([]);
-    const [currentpage, setCurrentpage] = useState(1);
-    const [totalpages, setTotalpages] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
     const limit = 15;
 
@@ -24,8 +24,8 @@ function Games(){
             const data = await response.json();
             console.log(data);
             setGames(data.items);
-            setCurrentpage(data.pagination.currentPage)
-            setTotalpages(data.pagination.totalPages)
+            setCurrentPage(data.pagination.currentPage)
+            setTotalPages(data.pagination.totalPages)
 
         } catch (e) {
             console.error(e);
@@ -35,12 +35,12 @@ function Games(){
 
 
     useEffect(() => {
-        fetchGames(currentpage)
-    },[currentpage])
+        fetchGames(currentPage)
+    },[currentPage])
 
     const handlePageChange = (page) => {
-        if (page >= 1 && page <= totalpages) {
-            setCurrentpage(page);
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
         }
     }
 
@@ -58,19 +58,19 @@ function Games(){
           </ul>
 
           <div className="flex justify-center mt-4">
-              {currentpage > 1 && (
+              {currentPage > 1 && (
                   <button
-                      onClick={() => {handlePageChange(currentpage - 1)}}
+                      onClick={() => {handlePageChange(currentPage - 1)}}
                       className="px-4 py-2 bg-blue-500 mx-1 text-white rounded hover:bg-blue-700 hover:text-white"
                   >
                       Previous
                   </button>
               )}
-              {Array.from({length: totalpages}, (_, i) => i + 1).map((page) => (
+              {Array.from({length: totalPages}, (_, i) => i + 1).map((page) => (
                   <button
                       key={page}
                       className={`px-4 py-2 mx-1 rounded ${
-                          page === currentpage
+                          page === currentPage
                               ? "bg-teal-400 text-gray-800 rounded"
                               : "bg-blue-500 text-white rounded"
                       }`}
@@ -79,9 +79,9 @@ function Games(){
                       {page}
                   </button>
               ))}
-              {currentpage < totalpages && (
+              {currentPage < totalPages && (
                   <button
-                      onClick={() => {handlePageChange(currentpage + 1)}}
+                      onClick={() => {handlePageChange(currentPage + 1)}}
                       className="px-4 py-2 bg-blue-500 mx-1 text-white rounded hover:bg-blue-700 hover:text-white"
 
                   >
