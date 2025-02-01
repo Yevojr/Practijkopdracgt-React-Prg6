@@ -1,6 +1,7 @@
 import {useState} from "react";
 
 
+
 function CreateGame({handleGameAddition}) {
     const [formData, setFormData] = useState({
         title: "",
@@ -22,7 +23,7 @@ function CreateGame({handleGameAddition}) {
         e.preventDefault();
 
         if (!formData.title || !formData.genre || !formData.description) {
-            alert("Field(s) is not allowed to be empty!");
+            alert("Title, Genre and Description fields is not allowed to be empty!");
             return;
         }
 
@@ -122,7 +123,7 @@ function CreateGame({handleGameAddition}) {
                 />
             </div>
             <button type="submit" className="w-full bg-pink-600 text-white py-2 px-4 rounded hover:bg-red-600 hover:text-white transition">
-                Add to Game List
+                    Add to Game List
             </button>
 
         </form>
