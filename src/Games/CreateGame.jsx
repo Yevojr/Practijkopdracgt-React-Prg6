@@ -1,8 +1,10 @@
 import {useState} from "react";
+import {useNavigate} from "react-router";
 
 
 
 function CreateGame({handleGameAddition}) {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         title: "",
         genre: "",
@@ -52,6 +54,7 @@ function CreateGame({handleGameAddition}) {
                 description: "",
                 rating: "",
             });
+            navigate("/games");
 
         } catch (e) {
             console.error("Error creating game", e);
